@@ -2,19 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Motivations
+## 'backend' 📁
 
-Although the bootstrapping is generally great, React prides itself on 'un-opinionated.' However, as a student, you probably do need a bit more 'guidance' to make your initial learning curve a bit smoother.
+You will need to `cd` into this folder and run `npm i`. The 'backend' has its own 'package.json'.
 
-That's why I created this template repo. It _does_ include some better linting and also checks for some specific common 'sloppiness.'
+In there, you can do `npm run server` to fire up a server on port `5000`.
 
-Prettier is also included, and I've updated `"browserslist"` to allow us to write our code for modern browsers only - no IE11, etc.
-
-Finally, some choice extensions and settings are also included for VS Code, along with a setting to make sure that Windows users use appropriate line endings.
-
-All of this should limit 'student sloppiness' while reinforcing some 'coding best practices.' 😎
-
-## Available Scripts
+## Available Front-End Scripts
 
 **Run `yarn`. _Do not_ use `npm` as it can lead to some unnecessary conflicts from `yarn` and `npm`.**
 
@@ -41,6 +35,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Deployment
+---
 
-This section has moved [here](https://facebook.github.io/create-react-app/docs/deployment)
+**You should update 'package.json' details including `"name"` and `"author"`.** You might also update `"version"` as you make progress.
