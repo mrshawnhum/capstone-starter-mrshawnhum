@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.mjs"
+    "server": "nodemon server.mjs"
   },
   "keywords": ["express", "node", "mongodb"],
   "author": "",
