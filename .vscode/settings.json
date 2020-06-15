@@ -20,7 +20,7 @@
   "javascript.validate.enable": false,
   "stylelint.enable": true,
   "terminal.integrated.fontFamily": "'Source Code Pro', 'Inconsolata', monospace",
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Winter is Coming (Dark Blue)",
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.view.alwaysShowHeaderActions": true
