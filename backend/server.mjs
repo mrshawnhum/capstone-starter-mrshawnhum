@@ -1,14 +1,9 @@
-import http from "http";
+import express from "express";
 
-const hostname = "127.0.0.1";
-const port = 4000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World");
+app.use(({ url }, res) => {
+  res.status(404).send(`<p>Sorry can't find the page: ${url}!</p>`);
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(3000);
