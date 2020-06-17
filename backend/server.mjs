@@ -1,16 +1,20 @@
 import express from "express";
 
-import { getAllProducts } from "./db";
+import petClient from "./test.mjs";
 
-const app = express();
-const port = 80;
+// import { getAllProducts } from "./db";
 
-app.get("/", (req, res) => res.send("Hello World!"));
+// const app = express();
+// const port = 80;
 
-app.listen(port, () => {
-  console.log(`App is listening to http://localhost:${port}`);
-});
+// app.get("/", (req, res) => res.send("Hello World!"));
 
-(async () => {
-  console.log(await getAllProducts());
-})();
+// app.listen(port, () => {
+//   console.log(`App is listening to http://localhost:${port}`);
+// });
+
+// (async () => {
+//   console.log(await getAllProducts());
+// })();
+
+console.log(petClient);
