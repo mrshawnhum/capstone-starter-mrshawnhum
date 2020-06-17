@@ -13,7 +13,7 @@ import petClient from "./test.mjs";
 //   console.log(`App is listening to http://localhost:${port}`);
 // });
 
-// (async () => {
+//console.log(petClient);
 //   console.log(await getAllProducts());
 // })();
 
