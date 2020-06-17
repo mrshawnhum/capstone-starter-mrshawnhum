@@ -1,9 +1,16 @@
 import express from "express";
 
-const app = express();
+import { getAllProducts } from "./db";
 
-app.use(({ url }, res) => {
-  res.status(404).send(`<p>Sorry can't find the page: ${url}!</p>`);
+const app = express();
+const port = 80;
+
+app.get("/", (req, res) => res.send("Hello World!"));
+
+app.listen(port, () => {
+  console.log(`App is listening to http://localhost:${port}`);
 });
 
-app.listen(3000);
+(async () => {
+  console.log(await getAllProducts());
+})();
