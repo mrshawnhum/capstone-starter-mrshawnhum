@@ -7,7 +7,7 @@ import { getAllUsers } from "./db/index.js";
 import petClient from "./test.mjs";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.get("/", (req, res) => res.send("Hello World!"));
 

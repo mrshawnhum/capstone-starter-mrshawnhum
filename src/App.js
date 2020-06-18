@@ -7,7 +7,7 @@ export class App extends React.Component {
     return (
       <main>
         <div>
-          <h1>test</h1>
+          <h1>Find My Rescue</h1>
           {<Home />}
         </div>
       </main>
