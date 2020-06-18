@@ -1,5 +1,8 @@
 module.exports = {
   target: "node",
   mode: "development",
-  entry: "./server.mjs",
+  entry: "./server.js",
+  resolve: {
+    modules: ["backend", "node_modules"],
+  },
 };
