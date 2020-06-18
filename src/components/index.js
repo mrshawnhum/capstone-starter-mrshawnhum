@@ -1,5 +1,5 @@
-import { Home } from "./Home/";
-import { Match } from "./MatchPage";
-import { PetCard } from "./PetCard/";
-import { PetSearchBar } from "./PetSearchBar/";
-import { Profile } from "./Profile/";
+export { Home } from "./Home/";
+// export { Match } from "./MatchPage";
+// export { PetCard } from "./PetCard/";
+// export { PetSearchBar } from "./PetSearchBar/";
+// export { Profile } from "./Profile/";

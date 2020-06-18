@@ -1,5 +1,16 @@
 import React from "react";
 import "./App.css";
-import { components } from "components";
+import { Home } from "components";
 
-export class App extends React.Component {}
+export class App extends React.Component {
+  render() {
+    return (
+      <main>
+        <div>
+          <h1>test</h1>
+          {<Home />}
+        </div>
+      </main>
+    );
+  }
+}
