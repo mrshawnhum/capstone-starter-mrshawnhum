@@ -1,17 +1,14 @@
 import cors from "cors";
 import express from "express";
 
-import animals from "./routes/api/animals";
-
-import { getAllUsers } from "./db/index.js";
-import petClient from "./test.mjs";
+import users from "./routes/api/users";
 
 const app = express();
-const PORT = 5000;
+const PORT = 3001;
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (_, res) => res.send("Hello World!"));
 
-app.use("/api/animals", animals);
+app.use("/api/users", users);
 
 app.use(
   cors({
@@ -20,11 +17,5 @@ app.use(
 );
 
 app.listen(PORT, () => {
-  console.log(`App is listening to http://localhost:${PORT}`);
+  console.info(`App is listening to http://localhost:${PORT}`);
 });
-
-(async () => {
-  console.log(await getAllUsers());
-})();
-
-//console.log(petClient);
