@@ -12,8 +12,8 @@ export class PetSearchBar extends React.Component {
         <input
           className="input is-small is-rounded"
           type="text"
-          placeholder="Search"
-        ></input>
+          placeholder="&#128269;Search"
+        />
       </div>
     );
   }
