@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import camelCase from "camelCase";
+import camelCase from "camelcase";
 
 export class Input extends React.Component {
   static defaultProps = {
