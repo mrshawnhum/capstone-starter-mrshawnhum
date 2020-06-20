@@ -8,7 +8,6 @@ export class App extends React.Component {
     return (
       <main>
         <div>
-          <h1 className="title">Find My Rescue</h1>
           {<Main />}
           {<Home />}
         </div>
