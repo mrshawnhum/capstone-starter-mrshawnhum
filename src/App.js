@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Home } from "components";
+import { Login } from "components";
 import { Main } from "components";
 
 export class App extends React.Component {
@@ -9,6 +10,7 @@ export class App extends React.Component {
       <main>
         <div>
           {<Main />}
+          {<Login />}
           {<Home />}
         </div>
       </main>
