@@ -12,6 +12,12 @@ export class Form extends React.Component {
     });
   };
 
+  processFormData = (formControls, datasetKey) =>
+    Array.from(formControls)
+      .filter(({ dataset }) => dataset[datasetKey])
+      .map(({ dataset, value }) => ({ [dataset[datasetKey]]: value }))
+      .reduce((acc, cur) => ({ ...acc, ...cur }));
+
   renderInputs = (inputs) =>
     inputs.map(({ labelText, inputType }) => (
       <Input
