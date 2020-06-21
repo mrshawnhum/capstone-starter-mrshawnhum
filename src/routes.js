@@ -11,7 +11,8 @@ export const Routes = () => (
     <Route exact path="/">
       <Redirect to="/home" />
     </Route>
-    <Route exact path="/Login">
+    <Route exact path="/login">
+      <Redirect to="/login" />
       <Login />
     </Route>
   </Switch>
