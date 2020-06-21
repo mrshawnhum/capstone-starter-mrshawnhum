@@ -31,7 +31,7 @@ export class Input extends React.Component {
           id={this.camelCaseLabel}
           type={this.props.type}
           placeholder={this.props.label}
-          data-st={this.props.st || this.camelCase}
+          data-st={this.props.st || this.camelCaseLabel}
           onChange={this.props.onChange}
         />
       </div>

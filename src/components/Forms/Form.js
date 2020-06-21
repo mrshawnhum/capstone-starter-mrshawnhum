@@ -14,11 +14,19 @@ export class Form extends React.Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.processFormData(e.target, "st"));
+  };
+
   processFormData = (formControls, datasetKey) =>
     Array.from(formControls)
       .filter(({ dataset }) => dataset[datasetKey])
       .map(({ dataset, value }) => ({ [dataset[datasetKey]]: value }))
-      .reduce((acc, cur) => ({ ...acc, ...cur }));
+      .reduce((accumulatedData, currentData) => ({
+        ...accumulatedData,
+        ...currentData,
+      }));
 
   renderInputs = (inputs) =>
     inputs.map(({ labelText, inputType }) => (

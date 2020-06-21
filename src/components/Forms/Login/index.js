@@ -23,11 +23,6 @@ export class Login extends Form {
     },
   ];
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.processFormData(e.target, "st"));
-  };
-
   render() {
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
