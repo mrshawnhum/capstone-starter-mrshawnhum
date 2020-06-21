@@ -3,6 +3,7 @@ import "bulma/css/bulma.css";
 import React from "react";
 
 import { Input } from "./Input";
+import { authenticateUser } from "api";
 
 export class Form extends React.Component {
   handleChange = (event) => {
@@ -16,7 +17,7 @@ export class Form extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.processFormData(e.target, "st"));
+    authenticateUser(this.processFormData(e.target, "st"));
   };
 
   processFormData = (formControls, datasetKey) =>
