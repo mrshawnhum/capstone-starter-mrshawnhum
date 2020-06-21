@@ -1,19 +1,12 @@
-import React from "react";
-import "./App.css";
-import { Home } from "components";
-import { Login } from "components";
-import { Main } from "components";
+import React, { Fragment } from "react";
 
-export class App extends React.Component {
-  render() {
-    return (
-      <main>
-        <div>
-          {<Main />}
-          {<Login />}
-          {<Home />}
-        </div>
-      </main>
-    );
-  }
-}
+import "./App.css";
+import { Home, Login, Main } from "components";
+
+export const App = () => (
+  <Fragment>
+    {<Main />}
+    {<Login />}
+    {<Home />}
+  </Fragment>
+);
