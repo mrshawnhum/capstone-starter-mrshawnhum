@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { App } from "./App";
+
+import { BrowserRouter as Router } from "react-router-dom";
+
+import { Main } from "./components/Main";
+import { Routes } from "./routes";
+
 import "font-awesome/css/font-awesome.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <div className="container">
+        <Main />
+        <Routes />
+      </div>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { Button } from "components/Button";
-import { Form } from "../Form";
+import { Form } from "../../components/Forms/Form";
 
 import styles from "./Login.module.css";
 export class Login extends Form {
