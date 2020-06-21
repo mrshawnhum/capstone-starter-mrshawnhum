@@ -13,9 +13,8 @@ export class Nav extends React.Component {
           <Link to="/">
             <li className="is-active">Home</li>
           </Link>
-          <li>Rescue Match</li>
           <li>Rescue Pets Near Me</li>
-          <Link to="/Login">
+          <Link to="/login">
             <li>Login</li>
           </Link>
         </ul>
