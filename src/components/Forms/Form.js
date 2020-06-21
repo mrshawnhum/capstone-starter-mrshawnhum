@@ -1,3 +1,5 @@
+import "bulma/css/bulma.css";
+
 import React from "react";
 
 import { Input } from "./Input";
@@ -21,6 +23,7 @@ export class Form extends React.Component {
   renderInputs = (inputs) =>
     inputs.map(({ labelText, inputType }) => (
       <Input
+        className="input"
         label={labelText}
         type={inputType}
         key={labelText}
