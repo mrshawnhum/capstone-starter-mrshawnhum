@@ -1,13 +1,16 @@
 import { Client } from "@petfinder/petfinder-js";
 
 export const getAllPets = async () => {
+<<<<<<< HEAD
   const client = await Client({
+=======
+  const pf = new Client({
+>>>>>>> 0859c1ec68cedb37ddaca3e6305213ac6917ff90
     apiKey: process.env.REACT_APP_API_KEY,
     secret: process.env.REACT_APP_SECRET_KEY,
   });
 
-  const results = await client.animal.search();
-  console.log(results.data.animals);
+  console.log(await pf.animal.search());
 };
 
 /*
