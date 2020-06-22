@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { getAllPets } from "api/";
+
 import { NavLink } from "react-router-dom";
 // import petClient from "./backend/test.mjs";
 export class Home extends React.Component {
@@ -19,11 +21,12 @@ export class Home extends React.Component {
   // }
 
   render() {
+    getAllPets();
     return (
       <div>
         <p>testing home page</p>
         <label htmlFor=""></label>
-        <input type="radio" onChange={this.handleChange} />
+        <input type="radio" label="test" onChange={this.handleChange} />
       </div>
     );
   }

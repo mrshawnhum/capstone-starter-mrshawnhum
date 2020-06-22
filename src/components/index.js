@@ -1,6 +1,6 @@
 export { Home } from "../views/Home";
 export { Login } from "../views/Login";
-export { Main } from "./Main";
+export { Header } from "./Header";
 // export { Match } from "./MatchPage";
 // export { PetCard } from "./PetCard/";
 // export { PetSearchBar } from "./PetSearchBar/";

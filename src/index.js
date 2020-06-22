@@ -4,7 +4,7 @@ import "./index.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { Main } from "./components/Main";
+import { Header } from "./components/Header";
 import { Routes } from "./routes";
 
 import "font-awesome/css/font-awesome.min.css";
@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <div className="container">
-        <Main />
+        <Header />
         <Routes />
       </div>
     </Router>
