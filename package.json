@@ -10,7 +10,6 @@
     "bulma": "^0.9.0",
     "camelcase": "^6.0.0",
     "create-react-app": "^3.4.1",
-    "dotenv": "^8.2.0",
     "font-awesome": "^4.7.0",
     "lodash.kebabcase": "^4.1.1",
     "react": "^16.13.1",
