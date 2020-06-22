@@ -5,6 +5,7 @@ import { getAllPets } from "api/";
 
 import { NavLink } from "react-router-dom";
 // import petClient from "./backend/test.mjs";
+
 export class Home extends React.Component {
   static PropType = {
     pets: [],
@@ -16,7 +17,7 @@ export class Home extends React.Component {
   };
 
   // async componentDidMount() {
-  //   const { animals } = await petClient();
+  //   const { animals } = await getAllPets();
   //   this.setState({ pets: animals });
   // }
 

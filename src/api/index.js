@@ -1,12 +1,9 @@
-import dotenv from "dotenv";
 import { Client } from "@petfinder/petfinder-js";
-
-dotenv.config();
 
 export const getAllPets = async () => {
   const client = await Client({
-    apiKey: process.env.API_KEY,
-    secret: process.env.SECRET_KEY,
+    // apiKey: process.env.REACT_APP_API_KEY,
+    // secret: process.env.REACT_APP_SECRET_KEY,
   });
 
   const results = await client.animal.search();
