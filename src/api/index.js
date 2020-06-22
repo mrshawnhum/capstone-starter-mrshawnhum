@@ -1,7 +1,21 @@
+import dotenv from "dotenv";
+import { Client } from "@petfinder/petfinder-js";
+
+dotenv.config();
+
+export const getAllPets = async () => {
+  const client = await Client({
+    apiKey: process.env.API_KEY,
+    secret: process.env.SECRET_KEY,
+  });
+
+  const results = await client.animal.search();
+  console.log(results.data.animals);
+};
+
 /*
 formData - authorize user using credentials passed in
 */
-
 export const authenticateUser = async (formData) => {
   const resp = await fetch("", {
     method: "POST",
