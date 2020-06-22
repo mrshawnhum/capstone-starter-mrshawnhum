@@ -1,8 +1,4 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-export const Cats = () => (
-  <div>
-    <p>cat page works</p>
-  </div>
-);
+export class CatGallery extends React.Component {}

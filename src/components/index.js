@@ -1,5 +1,5 @@
-export { Cats } from "../views/CatGallery";
-export { Dogs } from "../views/DogGallery";
+export { CatGallery } from "../views/CatGallery";
+export { DogGallery } from "../views/DogGallery";
 export { Home } from "../views/Home";
 export { Login } from "../views/Login";
 export { Header } from "./Header";
