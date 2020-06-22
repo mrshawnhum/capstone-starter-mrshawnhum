@@ -13,7 +13,12 @@ export class Nav extends React.Component {
           <Link to="/">
             <li className="is-active">Home</li>
           </Link>
-          <li>Rescue Pets Near Me</li>
+          <Link to="/dogs">
+            <li>Dogs</li>
+          </Link>
+          <Link to="/cats">
+            <li>Cats</li>
+          </Link>
           <Link to="/login">
             <li>Login</li>
           </Link>

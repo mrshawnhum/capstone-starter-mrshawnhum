@@ -1,3 +1,5 @@
+export { Cats } from "../views/Cats";
+export { Dogs } from "../views/Dogs";
 export { Home } from "../views/Home";
 export { Login } from "../views/Login";
 export { Header } from "./Header";
