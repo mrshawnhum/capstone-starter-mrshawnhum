@@ -1,8 +1,7 @@
-import PropTypes from "prop-types";
 import React from "react";
 
 import { Button } from "components/Button";
-import { Form } from "../../Forms/Form";
+import { Form } from "./Form";
 
 // import { authenticateUser } from "../api/";
 
