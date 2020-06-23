@@ -1,1 +1,1 @@
-export { Login } from "../views/Login";
+export { Login } from "./Login";
