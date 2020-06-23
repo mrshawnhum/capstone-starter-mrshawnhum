@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { ImgTable as Img } from "./ImgTable";
-
 import { getAllPets } from "api/";
 
 export class FilterableImgTable extends React.Component {
@@ -23,8 +21,8 @@ export class FilterableImgTable extends React.Component {
         return <img src={photos[0].medium} alt={name} key={i} />;
       }
     });
+    // .filter(({ type }) => type === "Dog");
   };
-  //      .filter(({ type }) => type === "Dog");
 
   render() {
     return (
