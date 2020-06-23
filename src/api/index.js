@@ -9,8 +9,7 @@ export const getAllPets = async () => {
     secret: process.env.REACT_APP_SECRET_KEY,
   });
 
-  const resp = await pf.animal.search();
-  return await resp.data.animals;
+  return (await pf.animal.search()).data;
 };
 
 /*

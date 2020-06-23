@@ -24,6 +24,7 @@ export class Form extends React.Component {
         ...accumulatedData,
         ...currentData,
       }));
+
   renderInputs = (inputs) =>
     inputs.map(({ labelText, inputType }) => (
       <Input

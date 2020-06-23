@@ -6,31 +6,35 @@ import { ImgTable as Img } from "./ImgTable";
 import { getAllPets } from "api/";
 
 export class FilterableImgTable extends React.Component {
-  state = { animals: [] };
+  state = { pets: [] };
 
   async componentDidMount() {
     try {
-      this.setState({ animals: await getAllPets() });
+      const { animals } = await getAllPets();
+      this.setState({ pets: animals });
     } catch (error) {
       console.error(error);
     }
   }
 
-  renderPics = () =>
-    this.state.animals.map(({ photos, name }, i) => (
-      <td key={i}>
-        <img src={photos.medium} alt={name} />
-      </td>
-    ));
+  renderPics = (animals) => {
+    return animals.map(({ photos, name }, i) => {
+      if (photos[0]) {
+        return <img src={photos[0].medium} alt={name} key={i} />;
+      }
+    });
+  };
   //      .filter(({ type }) => type === "Dog");
 
   render() {
     return (
-      <table>
-        <tbody>
-          <tr>{this.renderPics()}</tr>
-        </tbody>
-      </table>
+      <div>
+        {this.state.pets.length ? (
+          this.renderPics(this.state.pets)
+        ) : (
+          <p>Loading</p>
+        )}
+      </div>
     );
   }
 }
