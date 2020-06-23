@@ -1,14 +1,13 @@
-// import PropTypes from "prop-types";
-// import React from "react";
+import PropTypes from "prop-types";
+import React from "react";
 
-// export class ImgTable extends React.Component {
-//   static propTypes = {
-//     photos: PropTypes.string,
-//     name: PropTypes.string,
-//     type: PropTypes.string,
-//   };
+export class ImgTable extends React.Component {
+  static propTypes = {
+    photos: PropTypes.string,
+    name: PropTypes.string,
+  };
 
-//   render() {
-//     return <img src={photos.small} alt={this.name} />;
-//   }
-// }
+  render() {
+    return <img src={this.props.photos} alt={this.name} />;
+  }
+}
