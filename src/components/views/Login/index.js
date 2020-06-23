@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { Button } from "components/Button";
-import { Form } from "../../components/Forms/Form";
+import { Form } from "../../Forms/Form";
+
+// import { authenticateUser } from "../api/";
 
 import styles from "./Login.module.css";
 export class Login extends Form {
@@ -34,7 +36,35 @@ export class Login extends Form {
     },
   ];
 
-  handleRegistration = () => {
+  checkIsRegistration() {
+    return this.state.inputs.length > 2;
+  }
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const endpoint = this.checkIsRegistration() ? "/register" : "login";
+
+    const newUserData = this.checkIsRegistration()
+      ? JSON.stringify({
+          ...this.processFormData(e.target),
+          ...{ faves: [] },
+        })
+      : JSON.stringify(this.processFormData(e.target));
+
+    const res = await fetch(
+      `http://localhost:3001/api/users/users/${endpoint}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: newUserData,
+      }
+    );
+  };
+
+  handleButtonToggle = () => {
     const currentInputs = this.state.inputs;
     this.setState({
       buttonTexts: [...this.state.buttonTexts].reverse(),
@@ -53,9 +83,8 @@ export class Login extends Form {
         <Button
           buttonClass="plain"
           buttonText={this.state.buttonTexts[1]}
-          label="Register?"
           type="button"
-          onClick={this.handleRegistration}
+          onClick={this.handleButtonToggle}
         />
       </form>
     );
