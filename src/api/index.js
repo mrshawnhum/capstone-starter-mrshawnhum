@@ -1,7 +1,7 @@
 import { Client } from "@petfinder/petfinder-js";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 export const getAllPets = async () => {
   const pf = new Client({
@@ -9,7 +9,7 @@ export const getAllPets = async () => {
     secret: process.env.REACT_APP_SECRET_KEY,
   });
 
-  console.log(await pf.animal.search());
+  return await pf.animal.search();
 };
 
 /*
