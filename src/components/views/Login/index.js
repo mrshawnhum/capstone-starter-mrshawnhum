@@ -43,25 +43,29 @@ export class Login extends Form {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    const endpoint = this.checkIsRegistration() ? "/register" : "login";
+    console.log("submitted");
+
+    const endpoint = this.checkIsRegistration() ? "/register" : "/login";
 
     const newUserData = this.checkIsRegistration()
       ? JSON.stringify({
           ...this.processFormData(e.target),
-          ...{ faves: [] },
+          ...{ savedSearches: [] },
         })
       : JSON.stringify(this.processFormData(e.target));
 
-    const res = await fetch(
-      `http://localhost:3001/api/users/users/${endpoint}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: newUserData,
-      }
-    );
+    console.log(newUserData);
+
+    const res = await fetch(`http://localhost:3001/api/users${endpoint}`, {
+      method: "POST",
+      cors: "*cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: newUserData,
+    });
+
+    console.log(await res);
   };
 
   handleButtonToggle = () => {
