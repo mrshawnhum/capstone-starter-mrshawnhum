@@ -10,3 +10,19 @@ export const getAllUsers = async () => {
     throw Error(e);
   }
 };
+
+export const loginUser = async (user) => {
+  try {
+    return await client.db("users").collection("users").findOne(user);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export const registerUser = async (newUser) => {
+  try {
+    return await client.db("users").collection("users").insertOne(newUser);
+  } catch (err) {
+    throw new Error(err);
+  }
+};

@@ -1,6 +1,5 @@
-import { getAllUsers } from "db";
-
 import { Router } from "express";
+import { registerUser, loginUser } from "../../db";
 
 const router = Router();
 
@@ -14,8 +13,8 @@ router.get("/test", (_, res) => {
 // @route POST api/users/register
 // @description Register a new user
 // @access Public
-router.post("/register", async (req, res) => {
-  res.send(`<p>Trying to register a ${req.body}!</p>`);
+router.post("/register", async ({ body }, res) => {
+  res.json(await registerUser(body));
 });
 
 // @route POST api/users/authenticate
@@ -23,6 +22,18 @@ router.post("/register", async (req, res) => {
 // @access Public
 router.post("/authenticate", async (req, res) => {
   res.send(`<p>Trying to authenticate ${req.body}!</p>`);
+});
+
+// @route POST api/users/users/login
+// @description Login user
+// @access Public
+router.post("/users/login", async ({ body }, res) => {
+  const results = await loginUser(body);
+  if (!results) {
+    res.status(403);
+  }
+
+  res.json(results);
 });
 
 // @route POST api/users/saveSearch
