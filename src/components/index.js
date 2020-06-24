@@ -1,1 +1,1 @@
-export { Home } from "./views";
+export { HeroLogin } from "./HeroLogin/HeroLogin";

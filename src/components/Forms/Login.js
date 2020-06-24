@@ -5,7 +5,6 @@ import { Form } from "./Form";
 
 // import { authenticateUser } from "../api/";
 
-import styles from "./Login.module.css";
 export class Login extends Form {
   state = {
     buttonTexts: ["Login", "Register"],
@@ -80,7 +79,7 @@ export class Login extends Form {
 
   render() {
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
         <Button buttonClass="button" buttonText={this.state.buttonTexts[0]} />
         <Button

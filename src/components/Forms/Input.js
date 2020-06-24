@@ -20,12 +20,9 @@ export class Input extends React.Component {
 
   render() {
     return (
-      <div className="text-container">
-        <label className="label" htmlFor={this.camelCaseLabel}>
-          {this.props.label}
-        </label>
+      <div>
+        <label htmlFor={this.camelCaseLabel}>{this.props.label}</label>
         <input
-          className="input"
           id={this.camelCaseLabel}
           type={this.props.type}
           placeholder={this.props.label}
