@@ -15,9 +15,9 @@ router.get("/register", (_, res) => res.send("<p>TEsting register user</p>"));
 // @route POST api/users/register
 // @description Register a new user
 // @access Public
-router.post("/register", ({ body }, res) => {
-  console.log({ body });
-});
+router.post("/register", async ({ body }, res) =>
+  res.json(await registerUser(body))
+);
 
 // @route POST api/users/authenticate
 // @description Authenticate a user
