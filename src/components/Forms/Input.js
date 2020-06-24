@@ -11,6 +11,7 @@ export class Input extends React.Component {
 
   static propTypes = {
     label: PropTypes.string.isRequired,
+    name: PropTypes.string,
     onChange: PropTypes.func,
     st: PropTypes.string,
     type: PropTypes.string,
@@ -25,6 +26,7 @@ export class Input extends React.Component {
         <input
           id={this.camelCaseLabel}
           type={this.props.type}
+          name={this.props.name}
           placeholder={this.props.label}
           data-st={this.props.st || this.camelCaseLabel}
           onChange={this.props.onChange}
