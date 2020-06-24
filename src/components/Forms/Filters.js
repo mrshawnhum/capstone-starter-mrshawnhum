@@ -10,30 +10,23 @@ export class Filters extends Form {
 
   inputs = [
     {
+      inputType: "radio",
       labelText: "Dogs",
-      inputType: "radio",
+      name: "petType",
     },
     {
+      inputType: "radio",
       labelText: "Cats",
-      inputType: "radio",
+      name: "petType",
     },
     {
-      labelText: "Search",
-      inputType: "search",
-    },
-    {
-      labelText: "Favorites Only",
       inputType: "checkbox",
+      labelText: "Favorites Only",
     },
   ];
 
   handleChange = (event) => {
-    this.props.onChange({
-      [event.target.dataset.st]:
-        event.target.type === "checkbox"
-          ? event.target.checked
-          : event.target.value,
-    });
+    this.props.onChange(event.target.dataset.st);
   };
 
   render() {

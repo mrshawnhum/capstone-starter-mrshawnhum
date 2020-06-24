@@ -26,11 +26,12 @@ export class Form extends React.Component {
       }));
 
   renderInputs = (inputs) =>
-    inputs.map(({ labelText, inputType }) => (
+    inputs.map(({ labelText, inputType, name }) => (
       <Input
         className="input"
         label={labelText}
         type={inputType}
+        name={name}
         key={labelText}
         onChange={this.handleChange}
       />

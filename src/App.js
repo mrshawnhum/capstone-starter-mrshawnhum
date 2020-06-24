@@ -5,8 +5,14 @@ import { Filters } from "./components/Forms/";
 
 import { getAllPets } from "api/";
 
+import capitalize from "lodash.capitalize";
+
 export class App extends React.Component {
-  state = { pets: [] };
+  state = {
+    // Will be either dogs or cats
+    activeFilter: "",
+    pets: [],
+  };
 
   async componentDidMount() {
     try {
@@ -16,6 +22,14 @@ export class App extends React.Component {
       console.error(error);
     }
   }
+
+  handleChange = (selectedFilter) => {
+    /**
+     * selectedFilter will be "Cats" of "Dogs"
+     * Simply slice of the 's' and make sure it's capitalized to match 'type' in pets list
+     */
+    this.setState({ activeFilter: capitalize(selectedFilter).slice(0, -1) });
+  };
 
   renderCards = (animals) =>
     animals.map((animal) => {
@@ -40,11 +54,18 @@ export class App extends React.Component {
     });
 
   render() {
+    const activeFilter = this.state.activeFilter;
+    const filteredPets = activeFilter
+      ? this.state.pets.filter(
+          ({ type }) => console.log(type, activeFilter) || type === activeFilter
+        )
+      : this.state.pets;
+
     return (
       <div className="container">
         <HeroLogin />
-        <Filters />
-        {this.renderCards(this.state.pets)}
+        <Filters onChange={this.handleChange} />
+        {this.renderCards(filteredPets)}
       </div>
     );
   }
