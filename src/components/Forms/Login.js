@@ -21,6 +21,7 @@ export class Login extends Form {
     isLogged: false,
     password: "",
     username: "",
+    user: {} / null,
   };
 
   registrationInputs = [
@@ -63,7 +64,8 @@ export class Login extends Form {
       body: newUserData,
     });
 
-    console.log(await res);
+    this.setState({ user: await res.json() });
+    this.setState({ isLogged: await true });
   };
 
   handleButtonToggle = () => {
@@ -78,7 +80,9 @@ export class Login extends Form {
   };
 
   render() {
-    return (
+    return this.state.isLogged ? (
+      <p>Welcome {this.state.user.name}!</p>
+    ) : (
       <form onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
         <Button buttonClass="button" buttonText={this.state.buttonTexts[0]} />
