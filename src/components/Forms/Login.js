@@ -81,7 +81,9 @@ export class Login extends Form {
 
   render() {
     return this.state.isLogged ? (
-      <p>Welcome {this.state.user.name}!</p>
+      <p className="is-size-3 is-uppercase has-text-success has-background-info">
+        Welcome {this.state.user.name}!
+      </p>
     ) : (
       <form onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
