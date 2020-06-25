@@ -11,26 +11,29 @@ export class Login extends Form {
     inputs: [
       {
         inputType: "text",
+        labelSrOnly: true,
         labelText: "Username",
       },
       {
         inputType: "password",
+        labelSrOnly: true,
         labelText: "Password",
       },
     ],
-    isLogged: false,
     password: "",
     username: "",
-    user: {} / null,
+    user: {},
   };
 
   registrationInputs = [
     {
       inputType: "text",
+      labelSrOnly: true,
       labelText: "Name",
     },
     {
       inputType: "email",
+      labelSrOnly: true,
       labelText: "Email",
     },
   ];
@@ -51,8 +54,6 @@ export class Login extends Form {
         })
       : JSON.stringify(this.processFormData(e.target));
 
-    console.log(newUserData);
-
     const res = await fetch(`http://localhost:3001/api/users${endpoint}`, {
       method: "POST",
       cors: "*cors",
@@ -63,7 +64,6 @@ export class Login extends Form {
     });
 
     this.setState({ user: await res.json() });
-    this.setState({ isLogged: true });
   };
 
   handleButtonToggle = () => {
@@ -78,20 +78,20 @@ export class Login extends Form {
   };
 
   render() {
-    return this.state.isLogged ? (
-      <p className="is-size-3 is-uppercase has-text-success has-background-info">
+    return this.state.user.name ? (
+      <p className="has-text-success has-background-light	is-size-2 px-3 py-3">
         Welcome {this.state.user.name}!
       </p>
     ) : (
-      <form className="is-centered" onSubmit={this.handleSubmit}>
+      <form className="box is-centered" onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
         <Button
-          buttonClass="button Submit"
           buttonText={this.state.buttonTexts[0]}
+          buttonClass="button is-success mr-3"
         />
         <Button
-          buttonClass="plain"
           buttonText={this.state.buttonTexts[1]}
+          buttonClass="button is-primary"
           type="button"
           onClick={this.handleButtonToggle}
         />

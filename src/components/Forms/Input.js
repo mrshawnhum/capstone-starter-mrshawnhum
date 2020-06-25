@@ -10,7 +10,9 @@ export class Input extends React.Component {
   };
 
   static propTypes = {
+    inputClassName: PropTypes.string,
     label: PropTypes.string.isRequired,
+    labelSrOnly: PropTypes.bool,
     name: PropTypes.string,
     onChange: PropTypes.func,
     st: PropTypes.string,
@@ -18,12 +20,16 @@ export class Input extends React.Component {
   };
 
   camelCaseLabel = camelCase(this.props.label);
+  labelClass = this.props.labelSrOnly ? "is-sr-only" : "mr-2";
 
   render() {
     return (
-      <div>
-        <label htmlFor={this.camelCaseLabel}>{this.props.label}</label>
+      <div className="field">
+        <label htmlFor={this.camelCaseLabel} className={this.labelClass}>
+          {this.props.label}
+        </label>
         <input
+          className={this.props.inputClassName}
           id={this.camelCaseLabel}
           type={this.props.type}
           name={this.props.name}
