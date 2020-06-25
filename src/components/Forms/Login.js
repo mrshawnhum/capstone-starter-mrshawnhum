@@ -42,8 +42,6 @@ export class Login extends Form {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("submitted");
-
     const endpoint = this.checkIsRegistration() ? "/register" : "/login";
 
     const newUserData = this.checkIsRegistration()
@@ -65,7 +63,7 @@ export class Login extends Form {
     });
 
     this.setState({ user: await res.json() });
-    // this.setState({ isLogged: await true });
+    this.setState({ isLogged: true });
   };
 
   handleButtonToggle = () => {
