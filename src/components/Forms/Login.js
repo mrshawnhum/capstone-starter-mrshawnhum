@@ -20,7 +20,6 @@ export class Login extends Form {
         labelText: "Password",
       },
     ],
-    isLogged: false,
     password: "",
     username: "",
     user: {},
@@ -65,7 +64,6 @@ export class Login extends Form {
     });
 
     this.setState({ user: await res.json() });
-    this.setState({ isLogged: true });
   };
 
   handleButtonToggle = () => {
@@ -80,7 +78,7 @@ export class Login extends Form {
   };
 
   render() {
-    return this.state.isLogged ? (
+    return this.state.user.name ? (
       <p className="is-size-3 is-uppercase has-text-success has-background-info">
         Welcome {this.state.user.name}!
       </p>
