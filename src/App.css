@@ -4,10 +4,6 @@
 
 .filter {
   background: #66FCF1;
-  color: #116466;;
-}
-
-.filter:nth-child() {
   color: #116466;
 }
 
@@ -23,21 +19,31 @@
   font-size: 2em;
   flex-wrap: wrap;
   margin: 0.5rem;
-  max-width: 300px;
+  max-width: 400px;
   padding: 1rem 1rem;
   width: 20vw;
   float: right;
   justify-content: space-between;
   max-height: 70vh;
   min-height: 70vh;
+  transition: all 0.2s ease-in-out;
 }
 
-figure {
-  display: table;
+.App:hover {
+  transform: scale(1.1);
 }
-img, figcaption {
-  display: table-cell;
+
+
+img {
+  width: 200px;
+  vertical-align: middle;
+  display: block;
+}
+
+img,
+figcaption {
   vertical-align: bottom;
+  padding: 0;
 }
 
 figcaption,
@@ -46,10 +52,13 @@ a {
   justify-content: center;
   display: flex;
   width: 250px;
-  padding-left: 4px;
+  padding: 0;
   list-style: none;
+  line-height: 0px;
 }
+
 figcaption {
+  padding: 0;
   font-size: medium;
 }
 
@@ -66,7 +75,7 @@ label {
 }
 
 .Learn {
-background-color: #e94015;
+background-color:#e94015;
 font-weight: bold;
 }
 
@@ -79,11 +88,3 @@ button:hover {
   cursor: pointer;
   outline: none;
 }
-
-.App {
-  transition: all .2s ease-in-out;
-  }
-
-  .App:hover {
-  transform: scale(1.1);
-  }
