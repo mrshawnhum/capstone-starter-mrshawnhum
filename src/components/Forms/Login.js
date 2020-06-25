@@ -65,7 +65,7 @@ export class Login extends Form {
     });
 
     this.setState({ user: await res.json() });
-    this.setState({ isLogged: await true });
+    // this.setState({ isLogged: await true });
   };
 
   handleButtonToggle = () => {
@@ -85,9 +85,12 @@ export class Login extends Form {
         Welcome {this.state.user.name}!
       </p>
     ) : (
-      <form onSubmit={this.handleSubmit}>
+      <form className="is-centered" onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
-        <Button buttonClass="button" buttonText={this.state.buttonTexts[0]} />
+        <Button
+          buttonClass="button Submit"
+          buttonText={this.state.buttonTexts[0]}
+        />
         <Button
           buttonClass="plain"
           buttonText={this.state.buttonTexts[1]}

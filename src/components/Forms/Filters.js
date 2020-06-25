@@ -30,6 +30,10 @@ export class Filters extends Form {
   };
 
   render() {
-    return <form>{this.renderInputs(this.inputs)}</form>;
+    return (
+      <form>
+        <div className="filter">{this.renderInputs(this.inputs)}</div>
+      </form>
+    );
   }
 }
