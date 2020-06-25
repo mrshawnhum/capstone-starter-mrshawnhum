@@ -79,7 +79,7 @@ export class Login extends Form {
 
   render() {
     return this.state.user.name ? (
-      <p className="is-size-3 is-uppercase has-text-success has-background-info">
+      <p className="has-text-success has-background-light	is-size-2 px-3 py-3">
         Welcome {this.state.user.name}!
       </p>
     ) : (
