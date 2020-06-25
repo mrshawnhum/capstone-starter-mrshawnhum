@@ -10,16 +10,19 @@ export class Filters extends Form {
 
   inputs = [
     {
+      inputClassName: "radio",
       inputType: "radio",
       labelText: "Dogs",
       name: "petType",
     },
     {
+      inputClassName: "radio",
       inputType: "radio",
       labelText: "Cats",
       name: "petType",
     },
     {
+      inputClassName: "checkbox",
       inputType: "checkbox",
       labelText: "Favorites Only",
     },
@@ -30,10 +33,6 @@ export class Filters extends Form {
   };
 
   render() {
-    return (
-      <form>
-        <div className="filter">{this.renderInputs(this.inputs)}</div>
-      </form>
-    );
+    return <form className="box">{this.renderInputs(this.inputs)}</form>;
   }
 }

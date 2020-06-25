@@ -1,15 +1,12 @@
 import React from "react";
 
+import { Card } from "./components/Card";
 import { HeroLogin } from "./components/";
 import { Filters } from "./components/Forms/";
 
 import { getAllPets } from "api/";
 
 import capitalize from "lodash.capitalize";
-import { Button } from "components/Button";
-
-import "App.css";
-import "Loader.css";
 
 export class App extends React.Component {
   state = {
@@ -28,50 +25,11 @@ export class App extends React.Component {
   }
 
   handleChange = (selectedFilter) => {
-    /**
-     * selectedFilter will be "Cats" of "Dogs"
-     * Simply slice of the 's' and make sure it's capitalized to match 'type' in pets list
-     */
     this.setState({ activeFilter: capitalize(selectedFilter).slice(0, -1) });
   };
 
   renderCards = (animals) =>
-    animals.map((animal) => {
-      return (
-        <div className="App card columns is-multiline" key={animal.id}>
-          <div className="column">
-            <figure className="image">
-              <img
-                className="CardImg"
-                src={
-                  animal.primary_photo_cropped
-                    ? animal.primary_photo_cropped.small
-                    : "https://via.placeholder.com/150"
-                }
-                alt={`${animal.size}
-                ${animal.species}`}
-              />
-              <div className="Info">
-                <figcaption className="card-content">{animal.name}</figcaption>
-                <figcaption className="card-content">
-                  {animal.breeds.primary}
-                </figcaption>
-                <figcaption className="card-content">
-                  {animal.contact.address.city}, {animal.contact.address.state}
-                </figcaption>
-                <div>
-                  <a href={`${animal.url}`}>
-                    <button className="Learn button" type="button">
-                      Learn More!
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </figure>
-          </div>
-        </div>
-      );
-    });
+    animals.map((animal, index) => <Card animal={animal} key={index} />);
 
   render() {
     const activeFilter = this.state.activeFilter;
@@ -85,10 +43,14 @@ export class App extends React.Component {
       <div className="container">
         <HeroLogin />
         <Filters onChange={this.handleChange} />
-        {this.renderCards(filteredPets)}
+        <div className="columns is-multiline">
+          {this.renderCards(filteredPets)}
+        </div>
       </div>
     ) : (
-      <div className="loader">Loading...</div>
+      <progress className="progress is-large is-info" max="100">
+        60%
+      </progress>
     );
   }
 }

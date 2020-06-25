@@ -11,26 +11,30 @@ export class Login extends Form {
     inputs: [
       {
         inputType: "text",
+        labelSrOnly: true,
         labelText: "Username",
       },
       {
         inputType: "password",
+        labelSrOnly: true,
         labelText: "Password",
       },
     ],
     isLogged: false,
     password: "",
     username: "",
-    user: {} / null,
+    user: {},
   };
 
   registrationInputs = [
     {
       inputType: "text",
+      labelSrOnly: true,
       labelText: "Name",
     },
     {
       inputType: "email",
+      labelSrOnly: true,
       labelText: "Email",
     },
   ];
@@ -42,8 +46,6 @@ export class Login extends Form {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("submitted");
-
     const endpoint = this.checkIsRegistration() ? "/register" : "/login";
 
     const newUserData = this.checkIsRegistration()
@@ -52,8 +54,6 @@ export class Login extends Form {
           ...{ savedSearches: [] },
         })
       : JSON.stringify(this.processFormData(e.target));
-
-    console.log(newUserData);
 
     const res = await fetch(`http://localhost:3001/api/users${endpoint}`, {
       method: "POST",
@@ -65,7 +65,7 @@ export class Login extends Form {
     });
 
     this.setState({ user: await res.json() });
-    // this.setState({ isLogged: await true });
+    this.setState({ isLogged: true });
   };
 
   handleButtonToggle = () => {
@@ -85,15 +85,15 @@ export class Login extends Form {
         Welcome {this.state.user.name}!
       </p>
     ) : (
-      <form className="is-centered" onSubmit={this.handleSubmit}>
+      <form className="box is-centered" onSubmit={this.handleSubmit}>
         {this.renderInputs(this.state.inputs)}
         <Button
-          buttonClass="button Submit"
           buttonText={this.state.buttonTexts[0]}
+          buttonClass="button is-success mr-3"
         />
         <Button
-          buttonClass="plain"
           buttonText={this.state.buttonTexts[1]}
+          buttonClass="button is-primary"
           type="button"
           onClick={this.handleButtonToggle}
         />
