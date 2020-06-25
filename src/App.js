@@ -2,6 +2,7 @@ import React from "react";
 
 import { HeroLogin } from "./components/";
 import { Filters } from "./components/Forms/";
+// import { Favs } from "./components/Favs";
 
 import { getAllPets } from "api/";
 
@@ -16,6 +17,7 @@ export class App extends React.Component {
     // Will be either dogs or cats
     activeFilter: "",
     pets: [],
+    savedSearches: [],
   };
 
   async componentDidMount() {
