@@ -8,6 +8,10 @@ You will need to `cd` into this folder and run `npm i`. The 'backend' has its ow
 
 In there, you can do `npm run server` to fire up a server on port `5000`.
 
+## Frontend Disclaimer
+
+Some images will be the same photo as the api would not include photos for some animals. When there is no image, a placeholder from Unsplash will be included instead.
+
 ## Available Front-End Scripts
 
 **Run `yarn`. _Do not_ use `npm` as it can lead to some unnecessary conflicts from `yarn` and `npm`.**
