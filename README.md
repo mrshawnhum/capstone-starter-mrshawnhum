@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live site
 
-Here is the active site posted with Netlify - [Find My Rescue](https://5f03491bd130dc6040c755e6--objective-aryabhata-f2e297.netlify.app/)
+Here is the active site posted with Netlify(currently in construction due to API issue) - [Find My Rescue](https://5f03491bd130dc6040c755e6--objective-aryabhata-f2e297.netlify.app/)
 
 ## Frontend Disclaimer
 
